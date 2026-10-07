@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ClaimsController {
 
-    @GetMapping("/api/claims")
+    @GetMapping({"/api/claims", "/api/claims/"})
     public String claims() {
         return "[{\"id\":\"CL-90021\",\"policyNumber\":\"PL-40012\","
                 + "\"status\":\"IN_REVIEW\"}]";
     }
 
-    @GetMapping("/api/claims/{id}")
+    @GetMapping({"/api/claims/{id}", "/api/claims/{id}/"})
     public String claim(@PathVariable String id) {
         return "{\"id\":\"" + id + "\",\"policyNumber\":\"PL-40012\","
                 + "\"status\":\"IN_REVIEW\",\"adjuster\":\"A-77\","
